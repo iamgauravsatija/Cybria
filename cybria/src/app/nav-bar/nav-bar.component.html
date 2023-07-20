@@ -1,13 +1,20 @@
-<mat-toolbar color="primary">
-    <button mat-icon-button color="white" aria-label="Example icon button with a menu icon">
-        <mat-icon>menu</mat-icon>
-    </button>
-    <div class="container" style="height: inherit;">
-        <img class="responsive-img" style="height: inherit;" src="../../assets/flying-eagle-white.svg" alt="Image">
-    </div>
-    <span class="spacer"></span>
-    <button mat-button>Home</button>
-    <button mat-button>About</button>
-    <button mat-button>Contact</button>
+<mat-toolbar color="primary" [@navButtonAnimation] >
+  <button [@burgerButtonAnimation]="burgerButtonPosition" mat-icon-button color="white" aria-label="Example icon button with a menu icon" (click)="changeBurgerButtonPosition()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <div class="container" style="height: inherit;">
+    <img class="responsive-img" style="height: inherit;" src="../../assets/flying-eagle-white.svg" alt="Image">
+  </div>
+  <span class="spacer"></span>
+  <button mat-button class="slide-in">Home</button>
+  <button mat-button class="slide-in">About</button>
+  <button mat-button class="slide-in">Contact</button>
 </mat-toolbar>
-  
+<!-- <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const buttons = document.querySelectorAll(".slide-in-button");
+    buttons.forEach(button => {
+      button.classList.add("show");
+    });
+  });
+</script> -->

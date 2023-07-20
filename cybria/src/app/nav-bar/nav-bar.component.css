@@ -1,11 +1,22 @@
 .container {
     width: 100%; /* Set the desired width of the container */
     height: auto; /* Let the height adjust automatically based on the image */
-  }
-  
-  .responsive-img {
+}
+
+.responsive-img {
     display: block; /* Ensures the image behaves as a block element */
     max-width: 100%; /* Make the image scale down if it exceeds the container width */
     height: auto; /* Let the height adjust automatically based on the aspect ratio */
-  }
+}
+
+button {
+    font-size: medium;
+    margin-right: 2.5%;
+}
+
+/* Define the initial position of the buttons (off the screen) */
+
+button:hover {
+    scale: 1.2;
+}
   
