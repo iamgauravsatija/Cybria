@@ -9,3 +9,7 @@ node version 18.16.0
 cd cybria
 npm i
 ```
+
+
+## Docker
+ docker-compose up --build
