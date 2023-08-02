@@ -1,5 +1,5 @@
 <mat-toolbar color="primary" [@navButtonAnimation] >
-  <button [@burgerButtonAnimation]="burgerButtonPosition" mat-icon-button color="white" aria-label="Example icon button with a menu icon" (click)="changeBurgerButtonPosition()">
+  <button [@burgerButtonAnimation]="burgerButtonPosition" mat-icon-button color="white" aria-label="Example icon button with a menu icon" (click)="changeBurgerButtonPosition(); SideNavToggle()">
     <mat-icon>menu</mat-icon>
   </button>
   <div class="container" style="height: inherit;">

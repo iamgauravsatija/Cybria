@@ -1,5 +1,5 @@
 import { animate, query, stagger, state, style, transition, trigger } from '@angular/animations';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-nav-bar',
@@ -19,14 +19,17 @@ import { Component } from '@angular/core';
     trigger('burgerButtonAnimation', [
       state('vertical', style({ transform: 'rotate(0deg)' })),
       state('horizontal', style({ transform: 'rotate(90deg)' })),
-      transition('horizontal => vertical', animate('500ms ease-in')),
-      transition('vertical => horizontal', animate('500ms ease-in'))
+      transition('horizontal => vertical', animate('300ms ease-in')),
+      transition('vertical => horizontal', animate('300ms ease-in'))
     ])
   ]
 })
 
 
 export class NavBarComponent {
+  
+  @Output() sideNavToggled = new EventEmitter<boolean>();
+  menuStatus: boolean = false;
 
   constructor() { }
 
@@ -38,5 +41,10 @@ export class NavBarComponent {
     } else {
       this.burgerButtonPosition = 'horizontal';
     }
+  }
+
+  SideNavToggle() {
+    this.menuStatus = !this.menuStatus;
+    this.sideNavToggled.emit(this.menuStatus);
   }
 }
