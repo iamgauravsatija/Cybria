@@ -2,18 +2,18 @@ version: '3.8'
 
 services:
   frontend:
-    build: ./cybria-FE # Replace with the path to your Angular frontend project
+    build: ./cybria-FE
     ports:
       - "80:80"
     depends_on:
       - backend
 
   backend:
-    build: ./cybria-BE # Replace with the path to your FastAPI backend project
+    build: ./cybria-BE
     ports:
-      - "8000:8000"
-    depends_on:
-      - db
+      - "8005:8005"
+    # depends_on:
+    #   - db
 
   db:
     image: mongo
