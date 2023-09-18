@@ -17,4 +17,5 @@ COPY ./app /code/app
 EXPOSE 8005
 
 # Set the command to run the uvicorn server.
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8005"]
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+#uvicorn app.main:app --host 0.0.0.0 --port 8005
