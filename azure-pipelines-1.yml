@@ -12,7 +12,9 @@ resources:
   pipelines:
   - pipeline: sourcePipeline
     source: 'iamgauravsatija.Cybria'
-    trigger: none
+    trigger:
+      branches:
+      - main
 
 steps:
 - task: NodeTool@0
@@ -20,11 +22,19 @@ steps:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
 
-- script: echo "Angular pipeline is triggered"
+- script: echo "Triggered by source pipeline"
+  displayName: 'Run a one-line script'
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project. $(resources.pipeline.sourcePipeline.pipelineName)
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
+
 
 - script: |
     npm install -g @angular/cli
     npm install
     ng build --prod
   displayName: 'npm install and build'
+
 
