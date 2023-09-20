@@ -18,5 +18,3 @@ npm i
 
 <!-- Get code from A Db not API to show historical dataset
 Show various algo options -> Candel, etc for same dataset -->
-
-
