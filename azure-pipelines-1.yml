@@ -20,7 +20,7 @@ steps:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
 
-- script: echo Angular pipeline is triggered
+- script: echo "Angular pipeline is triggered"
 
 - script: |
     npm install -g @angular/cli
